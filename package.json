@@ -1,0 +1,20 @@
+{
+  "name": "useful_scripts",
+  "version": "0.1.0",
+  "description": "Handy scripts to deal with Elastic Search",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:carlosvillademor/useful_scripts.git"
+  },
+  "homepage": "https://github.com/carlosvillademor/useful_scripts",
+  "keywords": [
+    "scripts",
+    "elastic search",
+    "nodejs"
+  ],
+  "dependencies": {
+    "lodash": "^4.3.0"
+  },
+  "author": "carlos.villademor@gmail.com",
+  "readmeFilename": "README.md"
+}
