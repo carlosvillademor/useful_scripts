@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
-host=${1}
+hostName=${1}
 index=${2}
 type=${3}
 documentId=${4}
 
 if [ $# -lt 4 ]; then
-  echo "USAGE: $0 host index type documentId"
+  echo "USAGE: $0 hostName index type documentId"
   exit 1;
 fi
 
-curl -XDELETE $host:9200/$index/$type/$documentId
+echo "hostName: $hostName"
+
+curl -XDELETE http://$hostName:9200/$index/$type/$documentId
 

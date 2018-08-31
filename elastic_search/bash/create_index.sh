@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
-host=${1}
+hostName=${1}
 index=${2}
 shards=${3}
 replicas=${4}
 
 if [ $# -lt 4 ]; then
-  echo "USAGE: $0 host index shards replicas"
+  echo "USAGE: $0 hostName index shards replicas"
   exit 1;
 fi
 
-echo "HOST: $host"
+echo "hostName: $hostName"
 
-curl -XPUT $host:9200/$index -d "
+curl -XPUT http://$hostName:9200/$index -d "
 {
   \"settings\" : {
       \"index\" : {
