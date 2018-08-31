@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-host=${1}
+hostName=${1}
 index=${2}
 type=${3}
 documentId=${4}
@@ -7,14 +7,14 @@ field=${5}
 value=${6}
 
 if [ $# -lt 6 ]; then
-  echo "USAGE: $0 host index type documentId field value"
+  echo "USAGE: $0 hostName index type documentId field value"
   exit 1;
 fi
 
-echo "HOST: $host"
+echo "hostName: $hostName"
 
-curl -H "Content-Type: application/json" -X POST http://$host:9200/$index/$type/$documentId/_update -d "
-	{ \"doc\" : 
+curl -H "Content-Type: application/json" -X POST http://$hostName:9200/$index/$type/$documentId/_update -d "
+	{ \"doc\" :
 		{ \"${field}\": \"${value}\" }
 	}"
 

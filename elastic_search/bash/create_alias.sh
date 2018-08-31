@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-host=${1}
+hostName=${1}
 alias=${2}
 index=${3}
 
 if [ $# -lt 3 ]; then
-  echo "USAGE: $0 host alias index"
+  echo "USAGE: $0 hostName alias index"
   exit 1;
 fi
 
-echo "HOST: $host"
+echo "hostName: $hostName"
 
-curl -XPUT $host:9200/$index/_alias/$alias
+curl -XPUT https://$hostName:9200/$index/_alias/$alias
